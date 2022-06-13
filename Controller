@@ -1,0 +1,81 @@
+import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
+// import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
+import java.io.File;
+
+public class Controller {
+
+    @FXML
+    private Canvas canvas
+
+    @FXML
+   // private TextField brushSize;
+
+    @FXML
+   // private Button save;
+
+    @FXML
+   // private Button load;
+
+    @FXML
+   // private Button line;
+
+    @FXML
+   // private Button freeHand;
+
+    @FXML
+   // private Button undo;
+
+   //initializer
+    public void initialize() {
+        GraphicsContext g = canvas.getGraphicsContext2D();
+        canvas.setOnMouseDragged(e -> {
+            double size = Double.parseDouble(brushSize.getText());
+            double x = e.getX() - size / 2;
+            double y = e.getY() - size / 2;
+
+            //add way to delete lines (undo)
+           /* if(undo.isSelected()) {
+                g.clearRect(x, y, size, size);
+            }
+            else {
+                g.setFill(colorPicker.getValue());
+                g.fillRect(x, y, size, size);
+            }
+        } ); */
+    }
+
+    //function for when image saved
+    public void onSave(){
+        try{
+            Image snapshot = canvas.snapshot(null, null);
+            ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", new File("paint.png"));
+        }
+        catch (Exception e) {
+            System.out.println("Failed to save image: " + e);
+        }
+    }
+
+    //function for when exited from program
+    public void onExit() {
+        Platform.exit();
+    }
+
+    //function for when image saved
+  /*  public void onLoad(){
+        try{
+
+        }
+        catch (Exception e) {
+            System.out.println("Failed to find image: " + e);
+        }
+    } */ 
+
+     //function for when exited from program
+ /*  public void onUndo() {
+
+     } */
+}
