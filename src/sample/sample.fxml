@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="2000.0" prefWidth="2000.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <top>
+        <VBox>
+           <children>
+               <ToolBar>
+                  <items>
+                      <HBox alignment="CENTER" spacing="5">
+                         <children>
+                             <Button id="changeButt" mnemonicParsing="false" onAction="#onSave" text="Save" />
+                             <Button mnemonicParsing="false" onAction="#onLoad" text="Load" />
+                             <Button mnemonicParsing="false" onAction="#onLine" text="Line" />
+                             <Button mnemonicParsing="false" onAction="#onFreeHand" text="FreeHand" />
+                             <Button mnemonicParsing="false" text="Undo" onAction="#onUndo"/>
+                         </children>
+                      </HBox>
+                  </items>
+               </ToolBar>
+           </children>
+        </VBox>
+    </top>
+
+    <center>
+        <Canvas fx:id="canvas" height="1962.0" width="2000" />
+    </center>
+</BorderPane>
