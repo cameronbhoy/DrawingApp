@@ -36,15 +36,8 @@ public class Controller  {
     Vector<Double> listY = new Vector<Double>();
     int rightClickCount = 0;
     static boolean drawn = false;
-    //im making a test comment in main for testing rebase
     boolean rebaseMaybe = true;
-
-
-
-    //AINT NO PARTIES HERE BOYS
-
-
-
+    
     //grab all of the objects that are mentioned in the fxml file
     @FXML
     private Canvas canvas = new Canvas(2000,2000);
@@ -67,7 +60,6 @@ public class Controller  {
     @FXML
     protected Button changeButt; //this is the save button
 
-//-------------------------------------------------------------------------------------------------------------------------
     //initializer
     public void initialize() {
         gc = canvas.getGraphicsContext2D();
@@ -76,7 +68,6 @@ public class Controller  {
         redraw(drawings); //(re)draw contents of drawings
     }
 
-//-------------------------------------------------------------------------------------------------------------------------
     //function for line
     public void onLine() {
         redraw(drawings); //(re)draw contents of drawings
@@ -254,7 +245,7 @@ public class Controller  {
         });
 
     }
-//-------------------------------------------------------------------------------------------------------------------------
+
     //function for drawing freehand lines
     @FXML
     public void onFreeHand() {
@@ -424,8 +415,7 @@ public class Controller  {
         });
 
     }
-//-------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------
+
     //function to undo a line
     public void onUndo() {
         //update some booleans
@@ -439,7 +429,6 @@ public class Controller  {
             drawings = backupDrawings;
             redraw(drawings);
         }
-        //--------------------I DID NOT COMMENT THIS SECTION AS I BELIEVE YOU ARE STILL WORKING ON IT---------------
         else { //load was NOT the last thing to happen
             if (!drawings.isEmpty()) {
                 //see if right clicked was pressed most recently
